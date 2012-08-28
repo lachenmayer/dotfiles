@@ -10,6 +10,8 @@
 .Spotlight-V100
 .Trashes
 
+xcuserdata
+project.xcworkspace
 
 ### vim
 # https://github.com/github/gitignore/blob/master/Global/vim.gitignore
