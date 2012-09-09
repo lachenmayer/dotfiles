@@ -11,6 +11,7 @@ alias gp='git push'
 alias gc='git commit'
 alias gco='git checkout'
 alias ga='git add'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 impclone() {
     git clone hl2711@gituser.doc.ic.ac.uk:/vol/lab/firstyear/Repositories/2011-2012/161/hl2711/$1
