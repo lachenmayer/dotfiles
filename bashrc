@@ -4,7 +4,7 @@ source "`brew --prefix git`/etc/bash_completion.d/git-completion.bash"
 # directories are displayed in cyan instead of dark blue
 export LS_COLORS='di=01;36'
 
-#alias ls='gls -lAh --color'
+alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
 alias gs='git status'
 alias gp='git push'
@@ -32,9 +32,9 @@ mvim() {
 }
 
 makemp3() {
-	lame -hb320 $1.aif $1.mp3
-	id3tool $1.mp3 -r"Harry Lachenmayer" -t"$1"
+	lame -hb320 "$@".aif "$@".mp3
+	id3tool "$@".mp3 -r"Harry Lachenmayer" -t"$@"
 }
 
 PS1='$(__git_ps1 "[%s]-")${TITLEBAR}\[\033[0m\]\[\033[0;37m\][ \t \[\033[0m\]\[\033[1;37m\]\w \[\033[0m\]\[\033[0;37m\]]
-\[\033[0m\]\[\033[1;31m\]> \[\033[0m\]\[\033[0;0m\]'
+\[\033[0m\]\[\033[1;31m\]↳ \[\033[0m\]\[\033[0;0m\]'
