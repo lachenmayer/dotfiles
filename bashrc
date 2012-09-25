@@ -1,8 +1,11 @@
 source "`brew --prefix grc`/etc/grc.bashrc"
 source "`brew --prefix git`/etc/bash_completion.d/git-completion.bash"
+source "`brew --prefix git`/etc/bash_completion.d/git-prompt.sh"
 
 # directories are displayed in cyan instead of dark blue
 export LS_COLORS='di=01;36'
+
+export INPUTRC=~/.dotfiles/inputrc
 
 alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
@@ -39,3 +42,4 @@ makemp3() {
 
 PS1='$(__git_ps1 "%s ")${TITLEBAR}\[\033[0m\]\[\033[0;37m\]❯ \t \[\033[0m\]\[\033[1;37m\]\w \[\033[0m\]\[\033[0;37m\]❯
 \[\033[0m\]\[\033[1;31m\]↪ \[\033[0m\]\[\033[0;0m\]'
+
