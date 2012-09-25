@@ -1,0 +1,12 @@
+[user]
+    name = Harry Lachenmayer
+    email = harrylachenmayer@gmail.com
+[color]
+    diff = auto
+    status = off
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.dotfiles/gitignore
+[credential]
+    helper = osxkeychain
