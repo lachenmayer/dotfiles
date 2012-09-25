@@ -1,6 +1,21 @@
 set nocompatible
-
 set encoding=utf-8
+
+" vundle setup
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'vim-scripts/paredit.vim'
+Bundle 'michalbachowski/vim-wombat256mod'
+Bundle 'tpope/vim-surround'
+Bundle 'ervandew/supertab'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'kchmck/vim-coffee-script'
 
 " window stuff
 set number
@@ -8,6 +23,13 @@ syntax on
 set ruler
 set laststatus=2
 set foldcolumn=1
+set scrolloff=3
+
+" rainbow parantheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " change color of status line based on mode
 " from: http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
@@ -35,11 +57,11 @@ set ignorecase smartcase
 " insertion stuff
 filetype plugin indent on
 set autoindent smartindent
-"set shiftwidth=2 softtabstop=2 expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set noexpandtab
+set shiftwidth=2 tabstop=2 softtabstop=2
+set expandtab
+
+set list
+set listchars=tab:»_,trail:·
 
 " color xoria256
 color wombat256mod
@@ -57,4 +79,3 @@ set tags=./tags;/
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
-call pathogen#infect()
