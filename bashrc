@@ -7,6 +7,8 @@ export LS_COLORS='di=01;36'
 
 export INPUTRC=~/.dotfiles/inputrc
 
+export PATH=/usr/local/share/npm/bin:$PATH
+
 alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
 alias gs='git status'
