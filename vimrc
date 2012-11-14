@@ -16,6 +16,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/Align'
 
 " window stuff
 set number
@@ -25,11 +27,29 @@ set laststatus=2
 set foldcolumn=1
 set scrolloff=3
 
-" rainbow parantheses
+" rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['172',         'Orange3'],
+    \ ['148',         'Yellow3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['226',         'Yellow1'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['red',         'firebrick3'],
+    \ ['214',         'Orange1'],
+    \ ['black',       'SeaGreen3'],
+    \ ]
 
 " change color of status line based on mode
 " from: http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
