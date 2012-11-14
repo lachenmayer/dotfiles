@@ -7,19 +7,20 @@ export LS_COLORS='di=01;36'
 
 export INPUTRC=~/.dotfiles/inputrc
 
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH
 
 alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
 alias gs='git status'
 alias gp='git push'
+alias gpu='git pull'
 alias gc='git commit'
 alias gco='git checkout'
 alias ga='git add'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 impclone() {
-  git clone hl2711@gituser.doc.ic.ac.uk:/vol/lab/firstyear/Repositories/2011-2012/161/hl2711/$1
+  git clone ssh://hl2711@labranch.doc.ic.ac.uk:10222/lab/hl2711/$1
 }
 
 imperialfs() {
@@ -31,10 +32,6 @@ imperialfs() {
 
 imperial() {
   ssh $1 hl2711@shell`jot -rn 1 1 4`.doc.ic.ac.uk
-}
-
-mvim() {
-  /Applications/MacVim.app/Contents/MacOS/Vim -g $*;
 }
 
 makemp3() {
