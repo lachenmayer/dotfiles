@@ -18,6 +18,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/Align'
+Bundle 'wavded/vim-stylus'
 
 " window stuff
 set number
@@ -48,7 +49,7 @@ let g:rbpt_colorpairs = [
     \ ['gray',        'RoyalBlue3'],
     \ ['red',         'firebrick3'],
     \ ['214',         'Orange1'],
-    \ ['black',       'SeaGreen3'],
+    \ ['green',       'SeaGreen3'],
     \ ]
 
 " change color of status line based on mode
