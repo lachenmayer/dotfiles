@@ -7,10 +7,11 @@ export LS_COLORS='di=01;36'
 
 export INPUTRC=~/.dotfiles/inputrc
 
-export PATH=/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 
 alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
+alias notes='mvim ~/Dropbox/txt/notes.txt'
 alias gs='git status'
 alias gp='git push'
 alias gpu='git pull'
@@ -19,19 +20,18 @@ alias gco='git checkout'
 alias ga='git add'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
-impclone() {
-  git clone ssh://hl2711@labranch.doc.ic.ac.uk:10222/lab/hl2711/$1
-}
+function ..() { cd ../$1; }
+function ...() { cd ../../$1; }
+function ....() { cd ../../../$1; }
 
-imperialfs() {
-  diskutil unmount ~/imperialfs
-  shell="shell`jot -rn 1 1 4`.doc.ic.ac.uk:"
-  echo $shell
-  sshfs -o hl2711@$shell: ~/imperialfs
+impclone() {
+  git clone ssh://hl2711@labranch.doc.ic.ac.uk:10022/lab/hl2711/$1
 }
 
 imperial() {
-  ssh $1 hl2711@shell`jot -rn 1 1 4`.doc.ic.ac.uk
+  ## always connect to the same shell for byobu
+  #ssh $1 hl2711@shell`jot -rn 1 1 4`.doc.ic.ac.uk
+  ssh $1 hl2711@shell2.doc.ic.ac.uk
 }
 
 makemp3() {
@@ -39,6 +39,17 @@ makemp3() {
   id3tool "$@".mp3 -r"Harry Lachenmayer" -t"$@"
 }
 
+makedir() {
+  mkdir -p "$1" && cd "$1";
+}
+
+bootstrap() {
+  wget http://twitter.github.com/bootstrap/assets/bootstrap.zip
+  unzip bootstrap.zip
+  cp -R bootstrap/* .
+  rm -rf bootstrap.zip bootstrap/
+}
+
 PS1='$(__git_ps1 "%s ")${TITLEBAR}\[\033[0m\]\[\033[0;37m\]❯ \t \[\033[0m\]\[\033[1;37m\]\w \[\033[0m\]\[\033[0;37m\]❯
-\[\033[0m\]\[\033[1;31m\]↪ \[\033[0m\]\[\033[0;0m\]'
+\[\033[0m\]\[\033[1;31m\]↪  \[\033[0m\]\[\033[0;0m\]'
 
