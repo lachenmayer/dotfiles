@@ -12,6 +12,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/sh
 alias ls='gls -lAh --color'
 alias servehttp='python -m SimpleHTTPServer'
 alias notes='mvim ~/Dropbox/txt/notes.txt'
+alias projects='mvim ~/Dropbox/txt/projects.txt'
 alias gs='git status'
 alias gp='git push'
 alias gpu='git pull'
@@ -48,6 +49,15 @@ bootstrap() {
   unzip bootstrap.zip
   cp -R bootstrap/* .
   rm -rf bootstrap.zip bootstrap/
+}
+
+mvim() {
+  for file; do
+    if [ ! -e $file ]; then
+      touch $file
+    fi
+    open -a MacVim $file
+  done
 }
 
 PS1='$(__git_ps1 "%s ")${TITLEBAR}\[\033[0m\]\[\033[0;37m\]❯ \t \[\033[0m\]\[\033[1;37m\]\w \[\033[0m\]\[\033[0;37m\]❯

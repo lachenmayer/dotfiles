@@ -19,6 +19,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/Align'
 Bundle 'wavded/vim-stylus'
+Bundle 'jceb/vim-orgmode'
 
 " window stuff
 set number
