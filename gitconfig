@@ -1,12 +1,13 @@
 [user]
-    name = Harry Lachenmayer
-    email = harrylachenmayer@gmail.com
+  name = Harry Lachenmayer
+  email = harrylachenmayer@gmail.com
 [color]
-    diff = auto
-    status = off
-    branch = auto
-    ui = true
+  diff = auto
+  status = off
+  branch = auto
+  ui = true
 [core]
-    excludesfile = ~/.dotfiles/gitignore
+  excludesfile = ~/.dotfiles/gitignore
+  editor = vim
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
