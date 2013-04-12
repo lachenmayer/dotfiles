@@ -8,13 +8,32 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" misc bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/paredit.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/Align'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+
 " color scheme
 Bundle 'michalbachowski/vim-wombat256mod'
 color wombat256mod
 
+"syntax highlighting
+Bundle 'wavded/vim-stylus'
+Bundle 'jceb/vim-orgmode'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
+Bundle 'digitaltoad/vim-jade'
+syntax on
+
 " window stuff
 set number
-syntax on
 set ruler
 set laststatus=2
 set foldcolumn=1
@@ -26,25 +45,13 @@ set incsearch
 set ignorecase smartcase
 
 " insertion stuff
-set autoindent smartindent
+set autoindent
 set shiftwidth=2 tabstop=2 softtabstop=2
 set expandtab
 
+" visualize tabs/trailing spaces
 set list
 set listchars=tab:»_,trail:·
-
-" bundles
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/paredit.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-scripts/Align'
-Bundle 'wavded/vim-stylus'
-Bundle 'jceb/vim-orgmode'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'kien/ctrlp.vim'
 
 " undo tree visualization
 Bundle 'sjl/gundo.vim'
@@ -75,6 +82,9 @@ let g:rbpt_colorpairs = [
     \ ['green',       'SeaGreen3'],
     \ ]
 
+" required by vundle
+filetype plugin indent on
+
 " change color of status line based on mode
 " from: http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 function! InsertStatuslineColor(mode)
@@ -93,11 +103,8 @@ au InsertLeave * hi statusline guibg=darkslategray
 " default the statusline to green when entering Vim
 hi statusline guibg=darkslategray
 
-" automatically insert closing brace
-inoremap {      {}<Left>
+" better braces
 inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
 
 " always move up/down by one screen line even if the line is wrapped
 nnoremap j gj
@@ -107,6 +114,3 @@ nnoremap k gk
 set tags=./tags;/
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
-
-" required by vundle
-filetype plugin indent on

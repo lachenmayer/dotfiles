@@ -14,6 +14,7 @@ alias servehttp='python -m SimpleHTTPServer'
 alias notes='mvim ~/Dropbox/txt/notes.txt'
 alias projects='mvim ~/Dropbox/txt/projects.org'
 alias gs='git status'
+alias gd='git diff'
 alias gp='git push'
 alias gpu='git pull'
 alias gc='git commit'
@@ -58,6 +59,10 @@ mvim() {
     fi
     open -a MacVim $file
   done
+}
+
+psgrep() {
+  ps aux | grep -v grep | grep "$@" -i --color=auto;
 }
 
 PS1='$(__git_ps1 "%s ")${TITLEBAR}\[\033[0m\]\[\033[0;37m\]❯ \t \[\033[0m\]\[\033[1;37m\]\w \[\033[0m\]\[\033[0;37m\]❯
