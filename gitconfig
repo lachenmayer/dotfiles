@@ -3,7 +3,7 @@
   email = harrylachenmayer@gmail.com
 [color]
   diff = auto
-  status = off
+  status = true
   branch = auto
   ui = true
 [core]
