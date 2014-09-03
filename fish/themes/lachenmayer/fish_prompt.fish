@@ -31,6 +31,7 @@ end
 
 function fish_prompt
   # colors
+  set -l normal (set_color normal)
   set -l cwd_color (set_color aaa)
   set -l prompt_color
   if [ $vi_mode = $vi_mode_insert ]
@@ -38,7 +39,6 @@ function fish_prompt
   else
     set prompt_color (set_color 666)
   end
-  set -l normal (set_color normal)
 
   set -l current_directory $cwd_color(_replace_home (pwd))
 

@@ -12,3 +12,6 @@ set fish_greeting ""
 
 # Load aliases.
 . $fish_custom/aliases.fish
+
+# Set PATH
+set PATH ~/.cabal/bin $PATH
