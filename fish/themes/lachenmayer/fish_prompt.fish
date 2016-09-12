@@ -45,8 +45,3 @@ function fish_prompt
   echo -s $current_directory " " (_git_status)
   echo -n -s $prompt_color "λ " $normal
 end
-
-function fish_right_prompt
-  set -l date_color (set_color 666)
-  echo -s $date_color (date "+%T")
-end

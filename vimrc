@@ -2,31 +2,24 @@ set nocompatible
 set encoding=utf-8
 
 " vundle setup
-filetype on
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'VundleVim/Vundle.vim'
 
 " misc bundles
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/paredit.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/Align'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
 
 " color scheme
 Bundle 'michalbachowski/vim-wombat256mod'
-color wombat256mod
+"color wombat256mod
 
 "syntax highlighting
 Bundle 'wavded/vim-stylus'
-Bundle 'jceb/vim-orgmode'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'digitaltoad/vim-jade'
@@ -83,6 +76,7 @@ let g:rbpt_colorpairs = [
     \ ]
 
 " required by vundle
+call vundle#end()
 filetype plugin indent on
 
 " change color of status line based on mode
