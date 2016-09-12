@@ -1,6 +1,7 @@
 [user]
   name = Harry Lachenmayer
   email = harrylachenmayer@gmail.com
+  username = lachenmayer
 [color]
   diff = auto
   status = true
