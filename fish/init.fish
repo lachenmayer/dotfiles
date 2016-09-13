@@ -1,4 +1,4 @@
-source $fish_custom/aliases.fish
+source $OMF_CONFIG/aliases.fish
 
 # Required for Go
 #setenv GOPATH ~/.go
