@@ -30,18 +30,20 @@ function _replace_home
 end
 
 function fish_prompt
+  set -l last_status $status
+
   # colors
   set -l normal (set_color normal)
   set -l cwd_color (set_color aaa)
-  set -l prompt_color
-  if [ $vi_mode = $vi_mode_insert ]
-    set prompt_color (set_color -o white)
-  else
-    set prompt_color (set_color 666)
+  set -l prompt_color (set_color --bold white)
+  set -l error_color (set_color --bold red)
+
+  if [ $last_status -ne 0 ]
+    set error_status $error_color $last_status " " $normal
   end
 
   set -l current_directory $cwd_color(_replace_home (pwd))
 
-  echo -s $current_directory " " (_git_status)
+  echo -s $error_status $current_directory " " (_git_status)
   echo -n -s $prompt_color "λ " $normal
 end
