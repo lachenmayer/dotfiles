@@ -1,1 +1,11 @@
 ~ harry's dotfiles ~
+
+# ~/.gitignore
+[include]
+  path = ~/.dotfiles/gitconfig
+
+# ~/.bashrc
+. ~/.dotfiles/bashrc
+
+# ~/.vimrc
+so ~/.dotfiles/vimrc
