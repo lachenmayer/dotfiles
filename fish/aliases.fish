@@ -15,4 +15,17 @@ function makemp3
   id3tool "$argv".mp3 -r"Harry Lachenmayer" -t"$argv"
 end
 
-alias brlogs='vagrant ssh web -c "sudo tail -f /var/log/upstart/php5-fpm.log"'
+function makejs
+  if test (count $argv) -ne 1
+    echo "usage: makejs <project-name>"
+    return
+  end
+  set -l project $argv
+  mkdir $project
+  cd $project
+  npm init -y
+  echo "node_modules/" >> .gitignore
+  git init
+  git add .
+  git commit -m "init"
+end

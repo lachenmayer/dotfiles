@@ -44,6 +44,6 @@ function fish_prompt
 
   set -l current_directory $cwd_color(_replace_home (pwd))
 
-  echo -s $error_status $current_directory " " (_git_status)
+  echo -s $current_directory " " $error_status (_git_status)
   echo -n -s $prompt_color "λ " $normal
 end
