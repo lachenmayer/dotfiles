@@ -1,3 +1,15 @@
+#
+# Greeting
+#
+
+function fish_greeting
+  # no greeting
+end
+
+#
+# Prompt
+#
+
 function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
@@ -46,4 +58,13 @@ function fish_prompt
 
   echo -s $current_directory " " $error_status (_git_status)
   echo -n -s $prompt_color "λ " $normal
+end
+
+#
+# Right prompt
+#
+
+function fish_right_prompt
+  set -l date_color (set_color 666)
+  echo -s $date_color (date "+%T")
 end

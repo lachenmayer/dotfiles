@@ -15,6 +15,12 @@ function makemp3
   id3tool "$argv".mp3 -r"Harry Lachenmayer" -t"$argv"
 end
 
+function flac2mp3
+  for f in *.flac
+    ffmpeg -i $f -b:a 320k $f.mp3
+  end
+end
+
 function makejs
   if test (count $argv) -ne 1
     echo "usage: makejs <project-name>"
@@ -28,4 +34,6 @@ function makejs
   git init
   git add .
   git commit -m "init"
+  touch readme.md
+  touch index.js
 end

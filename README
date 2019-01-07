@@ -1,5 +1,7 @@
 ~ harry's dotfiles ~
 
+ln -s ~/.dotfiles/fish ~/.config/fish
+
 # ~/.gitignore
 [include]
   path = ~/.dotfiles/gitconfig

@@ -1,5 +1,5 @@
 [user]
-  name = Harry Lachenmayer
+  name = harry lachenmayer
   email = harrylachenmayer@gmail.com
   username = lachenmayer
 [color]
@@ -9,7 +9,7 @@
   ui = true
 [core]
   excludesfile = ~/.dotfiles/gitignore
-  editor = vim
+  editor = code --new-window --wait
 [credential]
   helper = osxkeychain
 [push]
