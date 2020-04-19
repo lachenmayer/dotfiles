@@ -9,10 +9,14 @@ alias gp="git push"
 alias gpu="git pull"
 alias gs="git status"
 alias gunstage="git reset HEAD"
+function gundo
+  git reset HEAD $argv
+  git checkout -- $argv
+end
 
 function makemp3
   lame -hb320 "$argv".aif "$argv".mp3
-  id3tool "$argv".mp3 -r"Harry Lachenmayer" -t"$argv"
+  id3tool "$argv".mp3 -r"Hazlo" -t"$argv"
 end
 
 function flac2mp3
