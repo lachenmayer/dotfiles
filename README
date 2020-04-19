@@ -2,7 +2,7 @@
 
 ln -s ~/.dotfiles/fish ~/.config/fish
 
-# ~/.gitignore
+# ~/.gitconfig
 [include]
   path = ~/.dotfiles/gitconfig
 

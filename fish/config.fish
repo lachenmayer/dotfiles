@@ -1,6 +1,12 @@
 source ~/.dotfiles/fish/aliases.fish
 source ~/.dotfiles/fish/theme.fish
-source ~/.dotfiles/fish/mac-dev.fish
+
+switch (uname)
+  case Darwin
+    source ~/.dotfiles/fish/mac.fish
+  case Linux
+    source ~/.dotfiles/fish/linux.fish
+end
 
 set -gx EDITOR "code -"
 setenv HOMEBREW_GITHUB_API_TOKEN e38c8f6ebbb3c845a7114ac4f8808dbbb96757fb
