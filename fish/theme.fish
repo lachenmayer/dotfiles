@@ -38,7 +38,7 @@ function _git_status
 end
 
 function _replace_home
-  echo $argv[1] | sed 's:^/\(Users\|home\)/harry:~:'
+  echo $argv[1] | sed 's:^/Users/harry:~:' | sed 's:^/home/harry:~:'
 end
 
 function fish_prompt
