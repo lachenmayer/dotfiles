@@ -38,7 +38,7 @@ function _git_status
 end
 
 function _replace_home
-  echo $argv[1] | sed 's:^/Users/harry:~:'
+  echo $argv[1] | sed 's:^/\(Users\|home\)/harry:~:'
 end
 
 function fish_prompt
@@ -46,6 +46,7 @@ function fish_prompt
 
   # colors
   set -l normal (set_color normal)
+  set -l date_color (set_color 666)
   set -l cwd_color (set_color aaa)
   set -l prompt_color (set_color --bold white)
   set -l error_color (set_color --bold red)
@@ -54,17 +55,9 @@ function fish_prompt
     set error_status $error_color $last_status " " $normal
   end
 
+  set -l date $date_color(date "+%T")
   set -l current_directory $cwd_color(_replace_home (pwd))
 
-  echo -s $current_directory " " $error_status (_git_status)
+  echo -s $date " " $current_directory " " $error_status (_git_status)
   echo -n -s $prompt_color "λ " $normal
-end
-
-#
-# Right prompt
-#
-
-function fish_right_prompt
-  set -l date_color (set_color 666)
-  echo -s $date_color (date "+%T")
 end
