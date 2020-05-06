@@ -1,23 +1,28 @@
 # Rust
-set -gx PATH $PATH ~/.cargo/bin
+set -g fish_user_paths ~/.cargo/bin $fish_user_paths
 
 # Python
-set -gx PATH $PATH ~/Library/Python/3.7/bin
+set -g fish_user_paths ~/Library/Python/3.7/bin $fish_user_paths
 
 # Go
 set -gx GOPATH ~/.go
-set -gx PATH $PATH $GOPATH/bin
+set -g fish_user_paths $GOPATH/bin $fish_user_paths
 
 # Android
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
-set -gx PATH $PATH $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools
+set -g fish_user_paths $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $fish_user_paths
 
-# Use Homebrew's Ruby - it refuses to install it because it's already provided.
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
-set -gx LDFLAGS "-L/usr/local/opt/ruby/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/ruby/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/ruby/lib/pkgconfig"
+# Node 12
+set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
 
-# Use JDK 11
+# Ruby
+set ruby_dir ruby@2.5
+set gem_dir 2.5.0
+set -g fish_user_paths "/usr/local/lib/ruby/gems/$gem_dir/bin/" "/usr/local/opt/$ruby_dir/bin" $fish_user_paths
+set -gx LDFLAGS "-L/usr/local/opt/$ruby_dir/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/$ruby_dir/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/$ruby_dir/lib/pkgconfig"
+
+# JDK 11
 set -g fish_user_paths "/usr/local/opt/openjdk@11/bin" $fish_user_paths
 set -gx CPPFLAGS "-I/usr/local/opt/openjdk@11/include"
