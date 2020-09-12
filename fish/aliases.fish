@@ -41,3 +41,16 @@ function makejs
   touch readme.md
   touch index.js
 end
+
+function makets
+  if test (count $argv) -ne 1
+    echo "usage: makets <project-name>"
+    return
+  end
+  makejs $argv
+  yarn add --dev typescript ts-node @types/node
+  yarn tsc --init
+  mv index.js index.ts
+  git add .
+  git commit -m "add typescript"
+end

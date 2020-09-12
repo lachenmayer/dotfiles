@@ -12,9 +12,6 @@ set -g fish_user_paths $GOPATH/bin $fish_user_paths
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 set -g fish_user_paths $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $fish_user_paths
 
-# Node 12
-set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
-
 # Ruby
 set ruby_dir ruby@2.5
 set gem_dir 2.5.0
