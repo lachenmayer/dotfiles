@@ -1,13 +1,23 @@
 ~ harry's dotfiles ~
 
-ln -s ~/.dotfiles/fish ~/.config/fish
+fish
 
-# ~/.gitconfig
-[include]
-  path = ~/.dotfiles/gitconfig
+    ln -s ~/.dotfiles/fish ~/.config/fish
 
-# ~/.bashrc
-. ~/.dotfiles/bashrc
+    Local machine overrides are in `~/.dotfiles/fish/local.fish` - they are not shared.
 
-# ~/.vimrc
-so ~/.dotfiles/vimrc
+git
+
+  # ~/.gitconfig
+  [include]
+    path = ~/.dotfiles/gitconfig
+
+bash
+
+  # ~/.bashrc
+  . ~/.dotfiles/bashrc
+
+vim
+
+  # ~/.vimrc
+  so ~/.dotfiles/vimrc

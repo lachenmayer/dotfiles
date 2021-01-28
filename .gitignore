@@ -1,0 +1,2 @@
+# Local machine overrides that shouldn't be shared.
+fish/local.fish
