@@ -14,3 +14,9 @@
   helper = osxkeychain
 [push]
   default = simple
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
