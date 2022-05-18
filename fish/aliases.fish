@@ -25,6 +25,10 @@ function flac2mp3
   end
 end
 
+function youtube2mp3
+  youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 "$argv"
+end
+
 function makejs
   if test (count $argv) -ne 1
     echo "usage: makejs <project-name>"
