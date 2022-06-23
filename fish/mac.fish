@@ -22,10 +22,11 @@ set -gx ANDROID_NDK $ANDROID_HOME/ndk/21.4.7075529
 #set -gx PKG_CONFIG_PATH "/usr/local/opt/$ruby_dir/lib/pkgconfig"
 
 # Homebrew Ruby
-set -g fish_user_paths /opt/homebrew/opt/ruby/bin /opt/homebrew/lib/ruby/gems/3.0.0/bin $fish_user_paths
+set -g fish_user_paths /opt/homebrew/opt/ruby/bin /opt/homebrew/lib/ruby/gems/3.1.0/bin $fish_user_paths
 set -gx LDFLAGS "-L/opt/homebrew/opt/ruby/lib"
 set -gx CPPFLAGS "-I/opt/homebrew/opt/ruby/include"
 set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/ruby/lib/pkgconfig"
 
 # Disable Homebrew upgrade when installing packages
 set -gx HOMEBREW_NO_INSTALL_UPGRADE 1
+set -gx HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
