@@ -17,6 +17,8 @@ end
 alias grewind="git reset --soft HEAD~"
 # Add more changes to the latest commit without asking to edit the commit message
 alias gamend="gc --amend --reuse-message HEAD"
+# Open PR in browser
+alias pr="gh pr view --web"
 
 function makemp3
   lame -hb320 "$argv".aif "$argv".mp3
