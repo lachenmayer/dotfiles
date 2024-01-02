@@ -10,33 +10,6 @@ end
 # Prompt
 #
 
-function _git_branch_name
-  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
-end
-
-function _is_git_dirty
-  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
-end
-
-function _git_status
-  if [ (_git_branch_name) ]
-    # border
-    set -l border_color (set_color normal)
-
-    # branch
-    set -l branch_color
-    if [ (_is_git_dirty) ]
-      set branch_color (set_color red)
-    else
-      set branch_color (set_color green)
-    end
-
-    set -l branch (echo -s $branch_color (_git_branch_name))
-
-    echo -s $branch
-  end
-end
-
 function _replace_home
   echo $argv[1] | sed 's:^/Users/harry:~:' | sed 's:^/home/harry:~:'
 end
@@ -58,6 +31,11 @@ function fish_prompt
   set -l date $date_color(date "+%T")
   set -l current_directory $cwd_color(_replace_home (pwd))
 
-  echo -s $date " " $current_directory " " $error_status (_git_status)
+  set -g __fish_git_prompt_showcolorhints 1
+  set -g __fish_git_prompt_show_informative_status 1
+  set -g __fish_git_prompt_color 666
+  set -g __fish_git_prompt_char_stateseparator " "
+
+  echo -s $date " " $current_directory (fish_vcs_prompt) " " $error_status
   echo -n -s $prompt_color "λ " $normal
 end
