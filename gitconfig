@@ -9,7 +9,7 @@
   ui = true
 [core]
   excludesfile = ~/.dotfiles/gitignore
-  editor = code --new-window --wait
+  editor = zed --wait
 [credential]
   helper = osxkeychain
 [push]

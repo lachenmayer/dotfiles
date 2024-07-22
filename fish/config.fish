@@ -12,7 +12,7 @@ if test -e ~/.dotfiles/fish/local.fish
   source ~/.dotfiles/fish/local.fish
 end
 
-set -gx EDITOR "code -"
+set -gx EDITOR "zed --wait"
 
 # Set a UTF-8 locale. Apparently required for Fastlane, but probably useful anyway.
 set -gx LC_ALL en_US.UTF-8
