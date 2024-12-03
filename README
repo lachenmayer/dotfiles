@@ -2,6 +2,7 @@
 
 fish
 
+    mv ~/.config/fish ~/.config/fish.bak
     ln -s ~/.dotfiles/fish ~/.config/fish
 
     Local machine overrides are in `~/.dotfiles/fish/local.fish` - they are not shared.
